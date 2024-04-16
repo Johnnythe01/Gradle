@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../Lenguajes"
+		},
+		{
+			"path": "../Programacion"
+		},
+		{
+			"name": "Entornos",
+			"path": "../Entornos/Entornos"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
