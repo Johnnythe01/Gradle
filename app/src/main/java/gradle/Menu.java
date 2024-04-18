@@ -1,4 +1,5 @@
 package gradle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class Menu {
         for (int i = 0; i < plats.size(); i++) {
             if (plats.get(i) == "Kebab") {
                 plats.remove(i);
-                i--; 
+                i--;
             }
         }
     }
