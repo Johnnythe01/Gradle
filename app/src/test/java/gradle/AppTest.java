@@ -38,6 +38,5 @@ class AppTest {
             assertFalse(gestor.libros.contains("titulo-Libro por nombre-Autor"));
             assertFalse(gestor.lecturas.stream().anyMatch(lecturasUsuario -> lecturasUsuario.contains("titulo-Libro")));
         }
-ss
     }
 }
