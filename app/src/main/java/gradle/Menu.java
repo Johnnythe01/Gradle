@@ -6,12 +6,19 @@ import java.util.List;
 public class Menu {
     private List<String> plats;
 
+    public static void main(String[] args) {
+        Menu menu = new Menu();
+        menu.afegir_plat("Kebab", 5.99);
+        String llista = menu.llistar_menu();
+        System.out.println(llista);
+    }
+
     public Menu() {
         this.plats = new ArrayList<>();
     }
 
     public void afegir_plat(String nomPlat, double preu) {
-        String plat = nomPlat + preu;
+        Plat plat = new Plat(nomPlat, preu);
         plats.add(plat);
     }
 
