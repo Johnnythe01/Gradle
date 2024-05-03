@@ -6,11 +6,10 @@ package gradle;
 
 import org.junit.jupiter.api.Test;
 
-import gradle.Menu;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
-import java.util.List;
+
 
 class AppTest {
     private Gestion gestion;
@@ -44,7 +43,7 @@ class AppTest {
     }
 
     @BeforeEach
-    void CrearComandasCrear(){
+    void crearComandas(){
         gestion = new Gestion();
         idComanda = gestion.crear_comanda();
     }
