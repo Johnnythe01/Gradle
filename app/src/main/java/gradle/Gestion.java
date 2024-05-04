@@ -7,9 +7,15 @@ import java.util.Map;
 
 public class Gestion {
     private Map<Integer, List<String>> comandas;
+    private Menu menu;
 
     public Gestion() {
         this.comandas = new HashMap<>();
+        this.menu = new Menu();
+    }
+
+    public int generarNuevoIdComanda() {
+        return comandas.size() + 1;
     }
 
     public int crear_comanda() {
@@ -18,7 +24,7 @@ public class Gestion {
         return nuevoIdComanda;
     }
 
-    public void afegir_plat_comanda(int idComanda) {
+    public void afegir_plat_comanda(int idComanda, String nomPlat) {
         if (comandas.containsKey(idComanda)) {
             List<String> platos = comandas.get(idComanda);
             platos.add(nomPlat);
@@ -26,25 +32,20 @@ public class Gestion {
         }
     }
 
-    public void mostrar_comanda(int idComanda) {
+    public List<String> mostrar_comanda(int idComanda) {
         if (comandas.containsKey(idComanda)) {
-            System.out.println("Platos de la comanda " + idComanda + ":");
             List<String> platos = comandas.get(idComanda);
-            for (String plat : platos) {
-                System.out.println(plat);
-            }
+            return platos;
         }
+        return new ArrayList<>();
     }
 
     public double calcular_total_comanda(int idComanda) {
-        if (comandas.containsKey(idComanda)) {
-            List<String> platos = comandas.get(idComanda);
+            List<String> comanda = comandas.get(idComanda);
             double total = 0;
-            for (String plat : platos) {
-                double precio = Menu.getPrecioPlato(plat);
-                total += precio;
+            for (String plat : comanda) {
+                total += menu.getPrecioPlato(plat);
             }
             return total;
-        }
     }
 }

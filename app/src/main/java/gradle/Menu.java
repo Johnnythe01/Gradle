@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Menu {
     private List<String> plats;
+    private List<Double> preus;
 
     public static void main(String[] args) {
         Menu menu = new Menu();
@@ -15,17 +16,19 @@ public class Menu {
 
     public Menu() {
         this.plats = new ArrayList<>();
+        this.preus = new ArrayList<>();
     }
 
     public void afegir_plat(String nomPlat, double preu) {
-        Plat plat = new Plat(nomPlat, preu);
-        plats.add(plat);
+        plats.add(nomPlat);
+        preus.add(preu);
     }
 
     public void eliminar_plat(String nomPlat) {
         for (int i = 0; i < plats.size(); i++) {
-            if (plats.get(i) == "Kebab") {
+            if (plats.get(i).equals(nomPlat)) {
                 plats.remove(i);
+                preus.remove(i);
                 i--;
             }
         }
@@ -33,9 +36,18 @@ public class Menu {
 
     public String llistar_menu() {
         String llista = "";
-        for (String plat : plats) {
-            llista += plat + "\n";
+        for (int i = 0; i < plats.size(); i++) {
+            llista += plats.get(i) + " - " + preus.get(i) + "\n";
         }
         return llista;
+    }
+
+    public double getPrecioPlato(String nomPlat) {
+        for (int i = 0; i < plats.size(); i++) {
+            if (plats.get(i).equals(nomPlat)) {
+                return preus.get(i);
+            }
+        }
+        return 0;
     }
 }

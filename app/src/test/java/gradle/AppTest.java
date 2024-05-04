@@ -53,7 +53,6 @@ class AppTest {
         gestion.afegir_plat_comanda(idComanda, "Kebab");
         gestion.afegir_plat_comanda(idComanda, "Durum");
         gestion.afegir_plat_comanda(idComanda, "Pizza");
-
         gestion.mostrar_comanda(idComanda);
 
         assertEquals(3, gestion.mostrar_comanda(idComanda).size() );
@@ -74,6 +73,5 @@ class AppTest {
         gestion.afegir_plat_comanda(idComanda, "Pizza");
 
         gestion.mostrar_comanda(idComanda);
-        
     }
 }
