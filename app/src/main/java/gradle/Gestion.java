@@ -7,11 +7,10 @@ import java.util.Map;
 
 public class Gestion {
     private Map<Integer, List<String>> comandas;
-    private Menu menu;
-
+    
     public Gestion() {
         this.comandas = new HashMap<>();
-        this.menu = new Menu();
+        new Menu();
     }
 
     public int generarNuevoIdComanda() {
@@ -41,11 +40,7 @@ public class Gestion {
     }
 
     public double calcular_total_comanda(int idComanda) {
-            List<String> comanda = comandas.get(idComanda);
-            double total = 0;
-            for (String plat : comanda) {
-                total += menu.getPrecioPlato(plat);
-            }
-            return total;
+        double total = 0;
+        return total;
     }
 }

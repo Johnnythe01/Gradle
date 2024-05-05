@@ -10,6 +10,8 @@ public class Menu {
     public static void main(String[] args) {
         Menu menu = new Menu();
         menu.afegir_plat("Kebab", 5.99);
+        menu.afegir_plat("Durum", 6.99);
+        menu.afegir_plat("Pizza", 9.99);
         String llista = menu.llistar_menu();
         System.out.println(llista);
     }
@@ -25,11 +27,10 @@ public class Menu {
     }
 
     public void eliminar_plat(String nomPlat) {
-        for (int i = 0; i < plats.size(); i++) {
+        for (int i = plats.size() - 1; i >= 0; i--) {
             if (plats.get(i).equals(nomPlat)) {
                 plats.remove(i);
                 preus.remove(i);
-                i--;
             }
         }
     }
