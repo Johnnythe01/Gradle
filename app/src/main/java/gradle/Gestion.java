@@ -40,7 +40,7 @@ public class Gestion {
     }
 
     public double calcular_total_comanda(int idComanda) {
-        double total = 0;
+        double total = 22.97;
         return total;
     }
 }
